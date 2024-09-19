@@ -8,8 +8,28 @@ export default $config({
       home: "aws",
     };
   },
- async run() {
-  await import("./infra/storage");
-  await import("./infra/api");
-},
+  async run() {
+    await import("./infra/storage");
+    await import("./infra/api");
+  },
 });
+
+// let student = {
+//   name: "paty",
+//   age: 23,
+//   async run() {
+//     await import("./infra/storage");
+//     await import("./infra/api");
+//   }
+// }
+
+
+// async run() {
+//   await import("./infra/storage");
+//   await import("./infra/api");
+// }
+
+// const run = async () => {
+//   await import("./infra/storage");
+//   await import("./infra/api");
+// }

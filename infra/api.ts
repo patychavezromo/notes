@@ -1,8 +1,16 @@
-import { bucket } from "./storage";
+import { table } from "./storage";
 
-export const api = new sst.aws.ApiGatewayV2("Api");
+// Create the API
+export const api = new sst.aws.ApiGatewayV2("Api", {
+  transform: {
+    route: {
+      handler: {
+        link: [table],
+      },
+    }
+  }
+});
 
-api.route("GET /", {
-  link: [bucket],
-  handler: "packages/functions/src/api.handler",
+api.route("POST /notes", {
+  handler: "packages/functions/src/create.main"
 });
