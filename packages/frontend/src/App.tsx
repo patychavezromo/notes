@@ -1,3 +1,4 @@
+import Routes from "./Routes.tsx";
 import Navbar from "react-bootstrap/Navbar";
 import "./App.css";
 
@@ -8,6 +9,7 @@ function App() {
         <Navbar.Brand className="fw-bold text-muted">Scratch</Navbar.Brand>
         <Navbar.Toggle />
       </Navbar>
+      <Routes />
     </div>
   );
 }
